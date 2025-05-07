@@ -1,2 +1,3 @@
-#dump files
-*.dump
+#dump
+data.asm
+text.asm
