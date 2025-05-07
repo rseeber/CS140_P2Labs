@@ -14,8 +14,10 @@ main:
     #while (arr[i] <= k)
     loop:
     # (arr[i] > k) ? goto endloop : [nothing]
+    # $t2 = 4 * i
+    mul $t2, $t1, 4
     # $t2 = &arr + i    (gets a pointer to arr[i])
-    add $t2, $t0, $t1
+    add $t2, $t0, $t2
     # $t4 = *(&arr + i)
     lw $t4, ($t2)
 
@@ -28,7 +30,7 @@ main:
 
         #loop code
         # i = i + 1;
-        add $t1, $t1, 4
+        add $t1, $t1, 1
 
         j loop
 
